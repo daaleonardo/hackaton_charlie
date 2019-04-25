@@ -3,6 +3,7 @@ package org.academiadecodigo.charlie.controllers;
 import org.academiadecodigo.charlie.command.UserDto;
 import org.academiadecodigo.charlie.converters.UserDtoToUserConverter;
 import org.academiadecodigo.charlie.converters.UserToUserDtoConverter;
+import org.academiadecodigo.charlie.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
