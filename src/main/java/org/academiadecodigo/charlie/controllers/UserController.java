@@ -1,8 +1,10 @@
 package org.academiadecodigo.charlie.controllers;
 
 import org.academiadecodigo.charlie.command.UserDto;
+import org.academiadecodigo.charlie.command.UserLoginForm;
 import org.academiadecodigo.charlie.converters.UserDtoToUserConverter;
 import org.academiadecodigo.charlie.converters.UserToUserDtoConverter;
+import org.academiadecodigo.charlie.services.RegisterService;
 import org.academiadecodigo.charlie.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,7 @@ public class UserController {
     private UserService userService;
     private UserDtoToUserConverter userDtoToUser;
     private UserToUserDtoConverter userToUserDto;
+    private RegisterService registerService;
 
     @Autowired
     public void setUserService(UserService userService) {
@@ -35,6 +38,12 @@ public class UserController {
     @Autowired
     public void setUserToUserDto(UserToUserDtoConverter userToUserDto) {
         this.userToUserDto = userToUserDto;
+    }
+
+    @Autowired
+    public void setRegisterService(RegisterService registerService) {
+
+        this.registerService = registerService;
     }
 
     @RequestMapping(
@@ -52,7 +61,7 @@ public class UserController {
     )
     public String toRegister(@Valid @ModelAttribute("user") UserDto userDto, BindingResult bindingResult){
 
-        if(bindingResult.hasErrors(), registerService.checkEmail(userDto.getEmail)) {
+        if(bindingResult.hasErrors() || registerService.checkEmail(userDto.getEmail())) {
             return "redirect:register";
         }
 
@@ -77,7 +86,8 @@ public class UserController {
     )
     public String loggingIn(@Valid @ModelAttribute("user") UserLoginForm userLoginForm, BindingResult bindingResult){
 
-        if (bindingResult.hasErrors() || !userService.exist(userLoginForm)){
+
+        if (bindingResult.hasErrors() || !userService.userExist(userLoginForm)){
             return "redirect:login";
 
         }
@@ -91,7 +101,10 @@ public class UserController {
     )
     public String cardMenu( Model model){
 
+        return  null;
     }
+
+
 
 
 }

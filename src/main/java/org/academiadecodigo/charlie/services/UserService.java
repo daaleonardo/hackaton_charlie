@@ -1,5 +1,6 @@
 package org.academiadecodigo.charlie.services;
 
+import org.academiadecodigo.charlie.command.UserLoginForm;
 import org.academiadecodigo.charlie.exceptions.UserNotFoundException;
 import org.academiadecodigo.charlie.persistence.model.User;
 
@@ -14,5 +15,7 @@ public interface UserService {
     void delete(Integer id) throws UserNotFoundException;
 
     List<User> list();
+
+    boolean userExist(UserLoginForm userLoginForm);
 
 }
