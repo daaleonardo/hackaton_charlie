@@ -1,14 +1,20 @@
-package org.academiadecodigo.charlie.persistence.model;
+package org.academiadecodigo.charlie.command;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+public class CardDto {
 
-@Entity
-@Table(name = "card")
-public class Card extends AbstractModel {
+    private Integer id;
 
     private String name;
+
     private String description;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
