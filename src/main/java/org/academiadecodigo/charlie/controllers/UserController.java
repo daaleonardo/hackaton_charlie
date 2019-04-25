@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/")
 public class UserController {
 
     private UserService userService;
@@ -46,9 +46,19 @@ public class UserController {
         this.registerService = registerService;
     }
 
+
     @RequestMapping(
             method = RequestMethod.GET,
-            value = ("/Registering")
+            value = {"/", ""}
+    )
+    public String mainPage(Model model){
+        model.addAttribute("userDto", new UserDto());
+        return "redirect:/login";
+    }
+
+    @RequestMapping(
+            method = RequestMethod.GET,
+            value = ("/register")
     )
     public String register(Model model){
         model.addAttribute("userDto", new UserDto());
@@ -57,7 +67,7 @@ public class UserController {
 
     @RequestMapping(
             method = RequestMethod.POST,
-            value = ("/registering")
+            value = ("/register")
     )
     public String toRegister(@Valid @ModelAttribute("user") UserDto userDto, BindingResult bindingResult){
 
