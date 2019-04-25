@@ -52,7 +52,7 @@ public class UserController {
     )
     public String toRegister(@Valid @ModelAttribute("user") UserDto userDto, BindingResult bindingResult){
 
-        if(bindingResult.hasErrors(), registerService.checkEmail(userDto.getEmail)){
+        if(bindingResult.hasErrors(), registerService.checkEmail(userDto.getEmail)) {
             return "redirect:register";
         }
 
@@ -76,7 +76,6 @@ public class UserController {
             path = ("/login")
     )
     public String loggingIn(@Valid @ModelAttribute("user") UserLoginForm userLoginForm, BindingResult bindingResult){
-
 
         if (bindingResult.hasErrors() || !userService.exist(userLoginForm)){
             return "redirect:login";
