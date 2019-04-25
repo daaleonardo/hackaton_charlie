@@ -19,7 +19,7 @@
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
-            <tr th:each="customer : ${users}">
+            <tr th:each="user : ${users}">
                 <td th:text="${user.id}"></td>
                 <td th:text="${user.firstName}"></td>
                 <td th:text="${user.gender}"></td>
