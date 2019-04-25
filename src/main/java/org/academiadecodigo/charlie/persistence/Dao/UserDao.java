@@ -1,4 +1,4 @@
-package org.academiadecodigo.charlie.persistence.Dao;
+package org.academiadecodigo.charlie.persistence.dao;
 
 public class UserDao {
 }
