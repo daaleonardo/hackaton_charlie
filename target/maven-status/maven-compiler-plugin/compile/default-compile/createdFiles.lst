@@ -1,0 +1,6 @@
+org/academiadecodigo/charlie/Log4jWebConfig.class
+org/academiadecodigo/charlie/persistence/dao/UserDao.class
+org/academiadecodigo/charlie/persistence/model/User.class
+org/academiadecodigo/charlie/command/UserDTO.class
+org/academiadecodigo/charlie/controllers/LoginController.class
+org/academiadecodigo/charlie/controllers/RegisterController.class

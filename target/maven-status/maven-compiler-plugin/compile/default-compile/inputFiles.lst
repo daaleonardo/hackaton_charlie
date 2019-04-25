@@ -1,0 +1,6 @@
+/Users/codecadet/Documents/hackaton_project/hackaton_charlie/src/main/java/org/academiadecodigo/charlie/persistence/model/User.java
+/Users/codecadet/Documents/hackaton_project/hackaton_charlie/src/main/java/org/academiadecodigo/charlie/command/UserDTO.java
+/Users/codecadet/Documents/hackaton_project/hackaton_charlie/src/main/java/org/academiadecodigo/charlie/persistence/dao/UserDao.java
+/Users/codecadet/Documents/hackaton_project/hackaton_charlie/src/main/java/org/academiadecodigo/charlie/controllers/RegisterController.java
+/Users/codecadet/Documents/hackaton_project/hackaton_charlie/src/main/java/org/academiadecodigo/charlie/controllers/LoginController.java
+/Users/codecadet/Documents/hackaton_project/hackaton_charlie/src/main/java/org/academiadecodigo/charlie/Log4jWebConfig.java
