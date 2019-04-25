@@ -42,7 +42,7 @@ public class UserController {
     )
     public String register(Model model){
         model.addAttribute("userDto", new UserDto());
-        return "login-registerForm";
+        return "user/register-view";
     }
 
     @RequestMapping(
@@ -55,7 +55,7 @@ public class UserController {
             return "redirect:register";
         }
 
-        userService.save(userDtoToUser.conver(userDto));
+        userService.save(userDtoToUser.convert(userDto));
 
         return "redirect:mainMenu";
 
@@ -66,8 +66,8 @@ public class UserController {
             path = ("/login")
     )
     public String login(Model model){
-        model.addAttribute("userLoginForm", new UserLoginForm());
-        return "login-registerForm";
+        model.addAttribute("user", new UserLoginForm());
+        return "user/login-view";
     }
 
     @RequestMapping(
