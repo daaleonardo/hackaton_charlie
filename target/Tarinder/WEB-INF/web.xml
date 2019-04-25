@@ -28,10 +28,6 @@
         <param-value>true</param-value>
     </context-param>
 
-    <listener>
-        <listener-class>org.academiadecodigo.charlie.Log4jWebConfig</listener-class>
-    </listener>
-
     <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>

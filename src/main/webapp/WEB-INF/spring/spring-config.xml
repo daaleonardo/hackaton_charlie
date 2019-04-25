@@ -15,13 +15,9 @@
 
     <!-- Use spring servlet for all requests, including static resources -->
     <mvc:default-servlet-handler/>
-
+    <mvc:resources mapping="/resources/**" location="/WEB-INF/templates/login/" />
     <!-- User @Controller, @Service annotations -->
     <mvc:annotation-driven />
-
-    <mvc:interceptors>
-        <bean class="org.academiadecodigo.charlie.interceptor.LogRequestsInterceptor"/>
-    </mvc:interceptors>
 
     <!-- Base package to search for spring beans -->
     <context:component-scan base-package="org.academiadecodigo.charlie"/>
