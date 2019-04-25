@@ -25,6 +25,11 @@ public class UserDto {
     @Email
     private String email;
 
+    @NotNull(message = "Password is Mandatory")
+    @NotBlank(message = "Password is Mandatory")
+    @Size(min = 6, max = 30)
+    private String password;
+
     @Size(max = 150)
     private String biography;
 
@@ -74,6 +79,14 @@ public class UserDto {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getBiography() {
