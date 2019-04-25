@@ -22,7 +22,7 @@ public class CardDtoToCardConverter extends AbstractConverter<CardDto, Card> {
         // Card Service Missing - Don't Use
         Card card = (cardDto.getId() != null ? cardService.get(cardDto.getId()) : new Card());;
 
-        card.setName(cardDto.getName());
+        card.setCardName(cardDto.getName());
         card.setDescription(cardDto.getDescription());
 
         return card;

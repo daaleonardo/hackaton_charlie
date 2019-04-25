@@ -1,21 +1,20 @@
 package org.academiadecodigo.charlie.persistence.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "card")
 public class Card extends AbstractModel {
 
-    private String name;
+    private String cardName;
     private String description;
 
-    public String getName() {
-        return name;
+    public String getCardName() {
+        return cardName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCardName(String cardName) {
+        this.cardName = cardName;
     }
 
     public String getDescription() {

@@ -1,10 +1,9 @@
 package org.academiadecodigo.charlie.persistence.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "client")
 public class User extends AbstractModel {
 
     private String firstName;

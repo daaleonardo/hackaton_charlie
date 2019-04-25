@@ -20,11 +20,11 @@ org/academiadecodigo/charlie/persistence/dao/jpa/JpaUserDao.class
 org/academiadecodigo/charlie/persistence/model/Model.class
 org/academiadecodigo/charlie/exceptions/UserNotFoundException.class
 org/academiadecodigo/charlie/command/CardDto.class
-org/academiadecodigo/charlie/controllers/RegisterController.class
 org/academiadecodigo/charlie/converters/CardToCardDtoConverter.class
-org/academiadecodigo/charlie/command/UserDto.class
+org/academiadecodigo/charlie/controllers/RegisterController.class
 org/academiadecodigo/charlie/command/UserLoginForm.class
+org/academiadecodigo/charlie/command/UserDto.class
 org/academiadecodigo/charlie/Log4jWebConfig.class
 org/academiadecodigo/charlie/persistence/model/User.class
-org/academiadecodigo/charlie/factory/CardFactory.class
 org/academiadecodigo/charlie/persistence/dao/jpa/GenericDao.class
+org/academiadecodigo/charlie/factory/CardFactory.class
