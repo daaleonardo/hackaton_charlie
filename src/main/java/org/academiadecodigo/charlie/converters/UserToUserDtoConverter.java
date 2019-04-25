@@ -2,7 +2,9 @@ package org.academiadecodigo.charlie.converters;
 
 import org.academiadecodigo.charlie.command.UserDto;
 import org.academiadecodigo.charlie.persistence.model.User;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserToUserDtoConverter extends AbstractConverter<User, UserDto> {
 
     @Override
