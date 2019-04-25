@@ -46,29 +46,19 @@ public class UserController {
         this.registerService = registerService;
     }
 
-
-    @RequestMapping(
-            method = RequestMethod.GET,
-            value = {"/", ""}
-    )
-    public String mainPage(Model model){
+    @RequestMapping(method = RequestMethod.GET, value = {"/", ""})
+    public String mainAcess(Model model){
         model.addAttribute("userDto", new UserDto());
         return "redirect:/login";
     }
 
-    @RequestMapping(
-            method = RequestMethod.GET,
-            value = ("/register")
-    )
+    @RequestMapping(method = RequestMethod.GET, value = ("/register"))
     public String register(Model model){
         model.addAttribute("userDto", new UserDto());
         return "user/register-view";
     }
 
-    @RequestMapping(
-            method = RequestMethod.POST,
-            value = ("/register")
-    )
+    @RequestMapping(method = RequestMethod.POST, value = ("/register"))
     public String toRegister(@Valid @ModelAttribute("user") UserDto userDto, BindingResult bindingResult){
 
         if(bindingResult.hasErrors() || registerService.checkEmail(userDto.getEmail())) {
@@ -81,19 +71,13 @@ public class UserController {
 
     }
 
-    @RequestMapping(
-            method = RequestMethod.GET,
-            path = ("/login")
-    )
+    @RequestMapping(method = RequestMethod.GET, path = ("/login"))
     public String login(Model model){
         model.addAttribute("user", new UserLoginForm());
         return "user/login-view";
     }
 
-    @RequestMapping(
-            method = RequestMethod.POST,
-            path = ("/login")
-    )
+    @RequestMapping(method = RequestMethod.POST, path = ("/login"))
     public String loggingIn(@Valid @ModelAttribute("user") UserLoginForm userLoginForm, BindingResult bindingResult){
 
 
@@ -105,10 +89,7 @@ public class UserController {
 
     }
 
-    @RequestMapping(
-            method = RequestMethod.GET,
-            path = ("/cards")
-    )
+    @RequestMapping(method = RequestMethod.GET, path = ("/cards"))
     public String cardMenu( Model model){
 
         return  null;
