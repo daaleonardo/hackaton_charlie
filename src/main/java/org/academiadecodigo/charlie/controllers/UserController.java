@@ -74,7 +74,7 @@ public class UserController {
     @RequestMapping(method = RequestMethod.GET, path = ("/login"))
     public String login(Model model){
         model.addAttribute("user", new UserLoginForm());
-        return "user/login-view";
+        return "login/index";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = ("/login"))
