@@ -114,6 +114,14 @@ public class UserController {
         return  null;
     }
 
+    @RequestMapping(
+            method = RequestMethod.GET,
+            path = ("/chat")
+    )
+    public String chat(){
+        return "chat/frontend";
+    }
+
 
 
 
