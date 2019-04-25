@@ -14,5 +14,6 @@ public interface Dao<T extends Model> {
 
     void delete(Integer id);
 
+    T findByEmail(String email);
 }
 

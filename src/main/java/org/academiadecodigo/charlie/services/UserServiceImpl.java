@@ -1,5 +1,6 @@
 package org.academiadecodigo.charlie.services;
 
+import org.academiadecodigo.charlie.command.UserLoginForm;
 import org.academiadecodigo.charlie.exceptions.UserNotFoundException;
 import org.academiadecodigo.charlie.persistence.dao.CardDao;
 import org.academiadecodigo.charlie.persistence.dao.UserDao;
@@ -56,6 +57,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> list() {
         return userDao.findAll();
+    }
+
+    @Override
+    public boolean userExist(UserLoginForm userLoginForm) {
+
+       User user = userDao.findByEmail(userLoginForm.getEmail());
+
+       if(user == null){
+           return false;
+       }
+
+       return (userLoginForm.getPassword().equals(user.getPassword()));
     }
 
 }
