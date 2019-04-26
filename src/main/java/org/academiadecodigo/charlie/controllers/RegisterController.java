@@ -44,7 +44,7 @@ public class RegisterController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = ("/register"))
-    public String toRegister(@Valid @ModelAttribute("user") UserDto userDto, BindingResult bindingResult){
+    public String toRegister(@Valid @ModelAttribute("userDto") UserDto userDto, BindingResult bindingResult){
 
         if(bindingResult.hasErrors() || registerService.checkEmail(userDto.getEmail())) {
             return "redirect:register";
@@ -52,7 +52,7 @@ public class RegisterController {
 
         userService.save(userDtoToUser.convert(userDto));
 
-        return "redirect:mainMenu";
+        return "login/login";
 
     }
 

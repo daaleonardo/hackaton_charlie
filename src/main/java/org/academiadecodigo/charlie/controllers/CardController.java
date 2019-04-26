@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class CardController {
 
      @RequestMapping(method = RequestMethod.GET, path = ("/cards"))
-    public String cardMenu( Model model){
+    public String mainMenu( Model model){
 
-        return  null;
+        return "https://www.google.com";
     }
 }
