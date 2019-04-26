@@ -40,7 +40,7 @@ public class RegisterController {
     @RequestMapping(method = RequestMethod.GET, value = ("/register"))
     public String register(Model model){
         model.addAttribute("userDto", new UserDto());
-        return "user/register-view";
+        return "login/register";
     }
 
     @RequestMapping(method = RequestMethod.POST, value = ("/register"))

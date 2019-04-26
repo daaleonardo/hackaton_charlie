@@ -11,11 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/")
 public class UserController {
 
-
     @RequestMapping(method = RequestMethod.GET, value = {"/", ""})
     public String mainAcess(Model model) {
         model.addAttribute("userDto", new UserDto());
         return "redirect:/login";
     }
 }
-

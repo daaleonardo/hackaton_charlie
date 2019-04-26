@@ -26,7 +26,7 @@ public class LoginController {
     @RequestMapping(method = RequestMethod.GET, path = ("/login"))
     public String login(Model model){
         model.addAttribute("user", new UserLoginForm());
-        return "login/index";
+        return "login/login";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = ("/login"))
@@ -35,8 +35,8 @@ public class LoginController {
 
         if (bindingResult.hasErrors() || !userService.userExist(userLoginForm)){
             return "redirect:login";
-
         }
+
         return "redirect:cardMenu";
 
     }
