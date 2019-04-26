@@ -17,7 +17,5 @@ public class UserController {
         model.addAttribute("userDto", new UserDto());
         return "redirect:/login";
     }
-
-
-
 }
+
