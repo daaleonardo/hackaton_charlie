@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Tarinder - Login</title>
     <meta charset="UTF-8">
@@ -29,6 +29,8 @@
     <link rel="stylesheet" type="text/css" href="./resources/css/util.css">
     <link rel="stylesheet" type="text/css" href="./resources/css/main.css">
     <!--===============================================================================================-->
+
+    <thymeleaf th:replace="header :: header"/>
 </head>
 <body>
 
@@ -38,28 +40,28 @@
             <form class="contact2-form validate-form">
                 <img src="./resources/images/logo.png"
                      style="display: block; margin-left: auto; margin-right: auto; width: 80%">
-                <span class="contact2-form-title">
-						Login
-					</span>
+                <span class="contact2-form-title">Login</span>
+                <form class="form-horizontal" th:object="${user}" th:action="@{/login}" method="post">
 
-                <div class="wrap-input2 validate-input" data-validate="Email is required">
-                    <input class="input2" type="text" name="email">
-                    <span class="focus-input2" data-placeholder="EMAIL"></span>
-                </div>
-
-                <div class="wrap-input2 validate-input" data-validate="Password is required">
-                    <input class="input2" type="text" name="password">
-                    <span class="focus-input2" data-placeholder="PASSWORD"></span>
-                </div>
-
-                <div class="container-contact2-form-btn">
-                    <div class="wrap-contact2-form-btn">
-                        <div class="contact2-form-bgbtn"></div>
-                        <button class="contact2-form-btn">
-                            Login
-                        </button>
+                    <div class="wrap-input2 validate-input" data-validate="Email is required"
+                         th:classappend="${#fields.hasErrors('email')}">
+                        <input class="input2" type="text" name="email" th:field="${user.email}">
+                        <span class="focus-input2" data-placeholder="EMAIL"></span>
                     </div>
-                </div>
+
+                    <div class="wrap-input2 validate-input" data-validate="Password is required"
+                         th:classappend="${#fields.hasErrors('password')}">
+                        <input class="input2" type="text" name="password" th:field="${user.password}">
+                        <span class="focus-input2" data-placeholder="PASSWORD"></span>
+                    </div>
+
+                    <div class="container-contact2-form-btn">
+                        <div class="wrap-contact2-form-btn">
+                            <div class="contact2-form-bgbtn"></div>
+                            <button type="submit" class="contact2-form-btn">Login</button>
+                        </div>
+                    </div>
+                </form>
 
                 <div class="container-contact2-form-btn">
                     <div class="wrap-contact2-form-btn">

@@ -82,7 +82,6 @@ public class UserController {
 
         if (bindingResult.hasErrors() || !userService.userExist(userLoginForm)){
             return "redirect:login";
-
         }
         return "redirect:cardMenu";
 
