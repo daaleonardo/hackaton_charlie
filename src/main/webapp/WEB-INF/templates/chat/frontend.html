@@ -1,25 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <thymeleaf xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+               th:fragment="header" th:remove="tag">
+
+        <title>Tarinder</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" modelType="text/css"/>
+        <script modelType="application/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script modelType="application/javascript" async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    </thymeleaf>
     <meta charset="utf-8">
     <title>WebSockets - Simple chat</title>
     <style>
-        * { font-family:tahoma; font-size:12px; padding:0;margin:0;}
-        p { line-height:18px; }
+        * { font-family:tahoma; font-size:18px; padding:0;margin:0;}
+        p { line-height:24px; background-color: rebeccapurple }
         div { width:500px; margin-left:auto; margin-right:auto;}
         #content { padding:5px; background:#ddd; border-radius:5px;
             overflow-y: scroll; border:1px solid #CCC;
-            margin-top:10px; height: 160px; }
+            margin-top:10px; height: 500px; }
         #input { border-radius:2px; border:1px solid #ccc;
             margin-top:10px; padding:5px; width:400px;
         }
         #status { width:88px;display:block;float:left;margin-top:15px; }
     </style>
 </head>
-<body>
-<div id="content"></div>
-<div>
-    <span id="status">Connecting...</span>
+<body style="background-color: #7d1796">
+
+<div style="text-align: center; width: 600px; display: block; margin: 0 auto" >
+<img src="./resources/images/logo.png" style=""  >
+
+</div>
+
+<div th:object=card>
+
+</div>
+
+<div id="content" th:object="*{loggedInUser}"> </div>
+<div >
+    <span id="status"></span>
     <label for="input"></label><input type="text" id="input" disabled="disabled" />
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
@@ -52,7 +73,6 @@
         connection.onopen = function () {
             // first we want users to enter their names
             input.removeAttr('disabled');
-            status.text('Choose name:');
         };
         connection.onerror = function (error) {
             // just in there were some problems with connection...
