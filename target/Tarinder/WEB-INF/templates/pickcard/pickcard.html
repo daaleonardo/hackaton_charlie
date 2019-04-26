@@ -1,0 +1,59 @@
+<html onclick="myFunction()">
+
+<head>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="card-random.js"></script>
+
+
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="card-random.css">
+    <script src="card-random.js"></script>
+
+
+</head>
+
+<body>
+<div id ="fullcover">
+    <div id="helper-text" style="display: block"> Click on the card to reveal it</div>
+    <div class="select-card" id="card-number">
+        <a href="#" onClick="pickimg2();return false;">
+            <img src="images/back.png" name="randimg" height="400px" width="auto">
+        </a>
+    </div>
+    <div id="start-chat" style="display:none">Click to <a href="192.168.1.138:8080/tarinder/chat" style="color: yellow">here</a> find your soul mate </div>
+
+
+
+</div>
+<script>
+
+    var myImages1 = new Array();
+    myImages1.push("images/star.png");
+    myImages1.push("images/devil.png");
+    myImages1.push("images/death.png");
+    myImages1.push("images/emperor.png");
+    myImages1.push("images/empress.png");
+    myImages1.push("images/fool.png");
+    myImages1.push("images/lovers.png");
+    myImages1.push("images/sun.png");
+    myImages1.push("images/world.png");
+    myImages1.push("images/wheel-fortune.png");
+
+    var clicktochat = new String();
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function pickimg2() {
+        document.randimg.src = myImages1[getRandomInt(0, myImages1.length - 1)];
+        document.getElementById("start-chat").style.display = 'block';
+        document.getElementById("helper-text").style.display = 'none';
+    }
+
+</script>
+
+</body>
+
+</html>
